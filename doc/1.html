@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		function add1(str) {
+			return str + 1
+		}
+		function add2(str) {
+			return str + 2
+		}
+
+		function compose(fn1, fn2) {
+			return function (str) {
+				return fn1(fn2(str))
+			}
+		}
+		let res = compose(add1, add2)
+		const r = res("apple")
+		console.log(r)
+	</script>
+</body>
+</html>
